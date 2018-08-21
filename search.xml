@@ -3,21 +3,48 @@
   
     
     <entry>
-      <title>Hello World</title>
-      <link href="/2018/08/08/hello-world/"/>
-      <url>/2018/08/08/hello-world/</url>
-      <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>]]></content>
+      <title>NodeJS的EventLoop</title>
+      <link href="/2018/08/10/NodeJS%E7%9A%84EventLoop/"/>
+      <url>/2018/08/10/NodeJS%E7%9A%84EventLoop/</url>
+      <content type="html"><![CDATA[<h1 id="NodeJS的EventLoop"><a href="#NodeJS的EventLoop" class="headerlink" title="NodeJS的EventLoop"></a>NodeJS的EventLoop</h1><h2 id="Node中event-loop的6个阶段（phase）"><a href="#Node中event-loop的6个阶段（phase）" class="headerlink" title="Node中event loop的6个阶段（phase）"></a>Node中event loop的6个阶段（phase）</h2><blockquote><p>nodejs的event loop分为6个阶段，每个阶段的作用如下:<br>    <code>process.nextTick()</code>在6个阶段结束的时候都会执行，文章后半部分会详细分析<code>process.nextTick()</code>的回调是怎么引进event loop，仅仅从<code>uv_run()</code>是找不到<code>process.nextTick()</code>是如何牵涉进来：</p></blockquote><ul><li>timers：执行setTimeout() 和 setInterval()中到期的callback。</li><li>I/O callbacks：上一轮循环中有少数的I/Ocallback会被延迟到这一轮的这一阶段执行</li><li>idle, prepare：仅内部使用，process.nextTick就属于这一类</li><li>poll：最为重要的阶段，执行I/O callback，在适当的条件下会阻塞在这个阶段</li><li>check：执行setImmediate()的callback</li><li>close callbacks：执行close事件的callback，例如socket.on(“close”,func)</li><li>从上面可以得知，idle观察者先于I/O观察者，I/O观察者先于check观察者。——《深入浅出Node.js》<pre><code class="javascript"> ┌───────────────────────┐┌─&gt;│        timers         ││  └──────────┬────────────┘│  ┌──────────┴────────────┐│  │     I/O callbacks     ││  └──────────┬────────────┘│  ┌──────────┴────────────┐│  │     idle, prepare     ││  └──────────┬────────────┘      ┌───────────────┐│  ┌──────────┴────────────┐      │   incoming:   ││  │         poll          │&lt;─────┤  connections, ││  └──────────┬────────────┘      │   data, etc.  ││  ┌──────────┴────────────┐      └───────────────┘│  │        check          ││  └──────────┬────────────┘│  ┌──────────┴────────────┐└──┤    close callbacks    │ └───────────────────────┘</code></pre>event loop的每一次循环都需要依次经过上述的阶段。 每个阶段都有自己的callback队列，每当进入某个阶段，都会从所属的队列中取出callback来执行，当队列为空或者被执行callback的数量达到系统的最大数量时，进入下一阶段。这六个阶段都执行完毕称为一轮循环。</li></ul>]]></content>
       
       <categories>
           
-          <category> 测试 </category>
+          <category> NodeJS,JavaScript </category>
           
       </categories>
       
       
         <tags>
             
-            <tag> 测试 </tag>
+            <tag> JavaScript </tag>
+            
+            <tag> NodeJS </tag>
+            
+        </tags>
+      
+    </entry>
+    
+    <entry>
+      <title>Weex入门</title>
+      <link href="/2018/08/01/weex%E5%85%A5%E9%97%A8/"/>
+      <url>/2018/08/01/weex%E5%85%A5%E9%97%A8/</url>
+      <content type="html"><![CDATA[<h1 id="Weex入门"><a href="#Weex入门" class="headerlink" title="Weex入门"></a>Weex入门</h1><h2 id="什么是Weex？"><a href="#什么是Weex？" class="headerlink" title="什么是Weex？"></a>什么是Weex？</h2><blockquote><p>Weex 是一个使用 Web 开发体验来开发高性能原生应用的框架。</p><ul><li><a href="http://weex-project.io/cn/guide/index.html#shi-me-shi-weex" target="_blank" rel="noopener">官网</a></li><li><a href="http://dotwe.org/vue/" target="_blank" rel="noopener">在线编码平台</a></li></ul></blockquote><p>Weex 的结构是解耦的，渲染引擎与语法层是分开的，也不依赖任何特定的前端框架，目前主要支持 <a href="https://cn.vuejs.org" target="_blank" rel="noopener">Vue.js</a> 和 <a href="https://alibaba.github.io/rax/" target="_blank" rel="noopener">Rax</a> 这两个前端框架。</p><blockquote><p>一个最简单的例子<br><img src="https://res.cloudinary.com/waitkaga/image/upload/v1534843312/blog/weex%E5%85%A5%E9%97%A8/weex-demo.png" alt=""></p></blockquote><p>请确保你已经安装了 Node.js，然后全局安装 weex-toolkit。</p><pre><code class="javascript">npm install weex-toolkit -g</code></pre><p>这条命令会向你命令行环境中注册一个 weex 命令。你可以用 weex create 命令来创建一个空的模板项目：</p><pre><code class="javascript">weex create demo</code></pre><p>命令执行完以后，在当前目录的 demo 文件夹里就有了一个空的 Weex + Vue.js 项目。<br>下面是执行的环境</p><pre><code class="javascript">  npm start  Starts the development server for you to preview your weex page on browser  You can also scan the QR code using weex playground to preview weex page on native  npm run dev  Open the code compilation task in watch mode  npm run ios  (Mac only, requires Xcode)  Starts the development server and loads your app in an iOS simulator  npm run android  (Requires Android build tools)  Starts the development server and loads your app on a connected Android device or emulator  npm run pack:ios  (Mac only, requires Xcode)  Packaging ios project into ipa package  npm run pack:android  (Requires Android build tools)  Packaging android project into apk package  npm run pack:web  Packaging html5 project into `web/build` folder  npm run test  Starts the test runner</code></pre>]]></content>
+      
+      <categories>
+          
+          <category> Vue,Weex,JavaScript </category>
+          
+      </categories>
+      
+      
+        <tags>
+            
+            <tag> Vue </tag>
+            
+            <tag> Weex </tag>
+            
+            <tag> JavaScript </tag>
             
         </tags>
       
@@ -27,17 +54,17 @@
   
     
     <entry>
-      <title>文章分类</title>
-      <link href="/categories/index.html"/>
-      <url>/categories/index.html</url>
-      <content type="html"><![CDATA[]]></content>
-    </entry>
-    
-    <entry>
       <title>关于我</title>
       <link href="/about/index.html"/>
       <url>/about/index.html</url>
       <content type="html"><![CDATA[<p>坐标成都，前端小菜鸟</p>]]></content>
+    </entry>
+    
+    <entry>
+      <title>文章分类</title>
+      <link href="/categories/index.html"/>
+      <url>/categories/index.html</url>
+      <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
@@ -48,16 +75,16 @@
     </entry>
     
     <entry>
-      <title>tags</title>
-      <link href="/tags/index.html"/>
-      <url>/tags/index.html</url>
+      <title>timeline</title>
+      <link href="/timeline/index.html"/>
+      <url>/timeline/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     
     <entry>
-      <title>timeline</title>
-      <link href="/timeline/index.html"/>
-      <url>/timeline/index.html</url>
+      <title>tags</title>
+      <link href="/tags/index.html"/>
+      <url>/tags/index.html</url>
       <content type="html"><![CDATA[]]></content>
     </entry>
     

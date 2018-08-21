@@ -46,7 +46,7 @@
     
     <title>
         
-            Hello World | 
+            NodeJS的EventLoop | 
         
         冰阔落咩~
     </title>
@@ -57,7 +57,7 @@
 
     <meta name="format-detection" content="telephone=no"/>
     <meta name="description" itemprop="description" content="">
-    <meta name="keywords" content="阿虎,测试">
+    <meta name="keywords" content="阿虎,JavaScript,NodeJS">
     <meta name="theme-color" content="#0097A7">
 
     <!-- Disable Fucking Bloody Baidu Tranformation -->
@@ -218,7 +218,7 @@
     <!-- WebAPP Icons -->
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="application-name" content="冰阔落咩~">
-    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/08/hello-world/">
+    <meta name="msapplication-starturl" content="http://yoursite.com/2018/08/10/NodeJS的EventLoop/">
     <meta name="msapplication-navbutton-color" content="#0097A7">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-title" content="冰阔落咩~">
@@ -233,16 +233,16 @@
     
 
     <!-- The Open Graph protocol -->
-    <meta property="og:url" content="http://yoursite.com/2018/08/08/hello-world/">
+    <meta property="og:url" content="http://yoursite.com/2018/08/10/NodeJS的EventLoop/">
     <meta property="og:type" content="blog">
-    <meta property="og:title" content="Hello World | 冰阔落咩~">
+    <meta property="og:title" content="NodeJS的EventLoop | 冰阔落咩~">
     <meta property="og:image" content="/img/favicon.png">
     <meta property="og:description" content="">
-    <meta property="og:article:tag" content="测试"> 
+    <meta property="og:article:tag" content="JavaScript"> <meta property="og:article:tag" content="NodeJS"> 
 
     
-        <meta property="article:published_time" content="Wed Aug 08 2018 15:03:29 GMT+0800">
-        <meta property="article:modified_time" content="Wed Aug 08 2018 15:59:53 GMT+0800">
+        <meta property="article:published_time" content="Fri Aug 10 2018 19:23:50 GMT+0800">
+        <meta property="article:modified_time" content="Tue Aug 21 2018 22:18:00 GMT+0800">
     
 
     <!-- The Twitter Card protocol -->
@@ -250,7 +250,7 @@
 
     <!-- Add canonical link for SEO -->
     
-        <link rel="canonical" href="http://yoursite.com/2018/08/08/hello-world/index.html" />
+        <link rel="canonical" href="http://yoursite.com/2018/08/10/NodeJS的EventLoop/index.html" />
     
 
     <!-- Structured-data for SEO -->
@@ -262,10 +262,10 @@
 {
     "@context": "https://schema.org",
     "@type": "BlogPosting",
-    "mainEntityOfPage": "http://yoursite.com/2018/08/08/hello-world/index.html",
-    "headline": "Hello World",
-    "datePublished": "Wed Aug 08 2018 15:03:29 GMT+0800",
-    "dateModified": "Wed Aug 08 2018 15:59:53 GMT+0800",
+    "mainEntityOfPage": "http://yoursite.com/2018/08/10/NodeJS的EventLoop/index.html",
+    "headline": "NodeJS的EventLoop",
+    "datePublished": "Fri Aug 10 2018 19:23:50 GMT+0800",
+    "dateModified": "Tue Aug 21 2018 22:18:00 GMT+0800",
     "author": {
         "@type": "Person",
         "name": "阿虎",
@@ -283,7 +283,7 @@
             "url": "/img/favicon.png"
         }
     },
-    "keywords": ",测试阿虎",
+    "keywords": ",JavaScript,NodeJS阿虎",
     "description": "",
 }
 </script>
@@ -352,7 +352,7 @@
     </button>
 
     <ul class="post-toc-wrap mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect" for="post-toc-trigger-btn" style="max-height:80vh; overflow-y:scroll;">
-        <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Quick-Start"><span class="post-toc-number">1.</span> <span class="post-toc-text">Quick Start</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Create-a-new-post"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Create a new post</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Run-server"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">Run server</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Generate-static-files"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">Generate static files</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Deploy-to-remote-sites"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#NodeJS的EventLoop"><span class="post-toc-number">1.</span> <span class="post-toc-text">NodeJS的EventLoop</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Node中event-loop的6个阶段（phase）"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">Node中event loop的6个阶段（phase）</span></a></li></ol></li></ol>
     </ul>
     
 
@@ -384,7 +384,7 @@
         
     
             <p class="article-headline-p">
-                Hello World
+                NodeJS的EventLoop
             </p>
         </div>
 
@@ -403,7 +403,7 @@
     <!-- Author Name & Date -->
     <div>
         <strong>阿虎</strong>
-        <span>8月 08, 2018</span>
+        <span>8月 10, 2018</span>
     </div>
 
     <div class="section-spacer"></div>
@@ -427,7 +427,7 @@
     </button>
     <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="article-functions-viewtags-button">
         <li class="mdl-menu__item">
-        <a class="post_tag-link" href="/tags/测试/">测试</a>
+        <a class="post_tag-link" href="/tags/JavaScript/">JavaScript</a></li><li class="mdl-menu__item"><a class="post_tag-link" href="/tags/NodeJS/">NodeJS</a>
     </ul>
     
 
@@ -444,7 +444,7 @@
 
     <!-- Share Weibo -->
     
-        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=Hello World&url=http://yoursite.com/2018/08/08/hello-world/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
+        <a class="post_share-link" href="http://service.weibo.com/share/share.php?appkey=&title=NodeJS的EventLoop&url=http://yoursite.com/2018/08/10/NodeJS的EventLoop/index.html&pic=http://yoursite.com/img/favicon.png&searchPic=false&style=simple" target="_blank">
             <li class="mdl-menu__item">
                 分享到微博
             </li>
@@ -453,7 +453,7 @@
 
     <!-- Share Twitter -->
     
-        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=Hello World&url=http://yoursite.com/2018/08/08/hello-world/index.html&via=阿虎" target="_blank">
+        <a class="post_share-link" href="https://twitter.com/intent/tweet?text=NodeJS的EventLoop&url=http://yoursite.com/2018/08/10/NodeJS的EventLoop/index.html&via=阿虎" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Twitter
             </li>
@@ -462,7 +462,7 @@
 
     <!-- Share Facebook -->
     
-        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/08/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://www.facebook.com/sharer/sharer.php?u=http://yoursite.com/2018/08/10/NodeJS的EventLoop/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Facebook
             </li>
@@ -471,7 +471,7 @@
 
     <!-- Share Google+ -->
     
-        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/08/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="https://plus.google.com/share?url=http://yoursite.com/2018/08/10/NodeJS的EventLoop/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 Google+
             </li>
@@ -480,7 +480,7 @@
 
     <!-- Share LinkedIn -->
     
-        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2018/08/08/hello-world/index.html&title=Hello World" target="_blank">
+        <a class="post_share-link" href="https://www.linkedin.com/shareArticle?mini=true&url=http://yoursite.com/2018/08/10/NodeJS的EventLoop/index.html&title=NodeJS的EventLoop" target="_blank">
             <li class="mdl-menu__item">
                 分享到 LinkedIn
             </li>
@@ -489,7 +489,7 @@
 
     <!-- Share QQ -->
     
-        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=冰阔落咩~&title=Hello World&summary=&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/08/08/hello-world/index.html" target="_blank">
+        <a class="post_share-link" href="http://connect.qq.com/widget/shareqq/index.html?site=冰阔落咩~&title=NodeJS的EventLoop&summary=&pics=http://yoursite.com/img/favicon.png&url=http://yoursite.com/2018/08/10/NodeJS的EventLoop/index.html" target="_blank">
             <li class="mdl-menu__item">
                 分享到 QQ
             </li>
@@ -508,15 +508,37 @@
                 <!-- Post Content -->
                 <div id="post-content" class="mdl-color-text--grey-700 mdl-card__supporting-text fade out">
     
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+        <h1 id="NodeJS的EventLoop"><a href="#NodeJS的EventLoop" class="headerlink" title="NodeJS的EventLoop"></a>NodeJS的EventLoop</h1><h2 id="Node中event-loop的6个阶段（phase）"><a href="#Node中event-loop的6个阶段（phase）" class="headerlink" title="Node中event loop的6个阶段（phase）"></a>Node中event loop的6个阶段（phase）</h2><blockquote>
+<p>nodejs的event loop分为6个阶段，每个阶段的作用如下:<br>    <code>process.nextTick()</code>在6个阶段结束的时候都会执行，文章后半部分会详细分析<code>process.nextTick()</code>的回调是怎么引进event loop，仅仅从<code>uv_run()</code>是找不到<code>process.nextTick()</code>是如何牵涉进来：</p>
+</blockquote>
+<ul>
+<li>timers：执行setTimeout() 和 setInterval()中到期的callback。</li>
+<li>I/O callbacks：上一轮循环中有少数的I/Ocallback会被延迟到这一轮的这一阶段执行</li>
+<li>idle, prepare：仅内部使用，process.nextTick就属于这一类</li>
+<li>poll：最为重要的阶段，执行I/O callback，在适当的条件下会阻塞在这个阶段</li>
+<li>check：执行setImmediate()的callback</li>
+<li>close callbacks：执行close事件的callback，例如socket.on(“close”,func)</li>
+<li>从上面可以得知，idle观察者先于I/O观察者，I/O观察者先于check观察者。——《深入浅出Node.js》<pre><code class="javascript"> ┌───────────────────────┐
+┌─&gt;│        timers         │
+│  └──────────┬────────────┘
+│  ┌──────────┴────────────┐
+│  │     I/O callbacks     │
+│  └──────────┬────────────┘
+│  ┌──────────┴────────────┐
+│  │     idle, prepare     │
+│  └──────────┬────────────┘      ┌───────────────┐
+│  ┌──────────┴────────────┐      │   incoming:   │
+│  │         poll          │&lt;─────┤  connections, │
+│  └──────────┬────────────┘      │   data, etc.  │
+│  ┌──────────┴────────────┐      └───────────────┘
+│  │        check          │
+│  └──────────┬────────────┘
+│  ┌──────────┴────────────┐
+└──┤    close callbacks    │
+ └───────────────────────┘
+</code></pre>
+event loop的每一次循环都需要依次经过上述的阶段。 每个阶段都有自己的callback队列，每当进入某个阶段，都会从所属的队列中取出callback来执行，当队列为空或者被执行callback的数量达到系统的最大数量时，进入下一阶段。这六个阶段都执行完毕称为一轮循环。</li>
+</ul>
 
         
     
@@ -542,6 +564,14 @@
     <div class="section-spacer"></div>
 
     <!-- Next Nav -->
+    
+        <a href="/2018/08/01/weex入门/" id="post_nav-older" class="next-content">
+            旧篇
+            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color--white mdl-color-text--grey-900" role="presentation">
+                <i class="material-icons">arrow_forward</i>
+            </button>
+        </a>
     
 </nav>
 
@@ -627,7 +657,7 @@
             </a>
             <ul class="dropdown-menu">
             <li>
-                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">1</span></a>
+                <a class="sidebar_archives-link" href="/archives/2018/08/">八月 2018<span class="sidebar_archives-count">2</span></a>
             </ul>
         </li>
         
@@ -886,6 +916,10 @@ It will not impact the appearance and can give developers a lot of support :)
 <!-- Import prettify js  -->
 
 
+    
+        <script>lsloader.load("hanabi","/js/hanabi-browser-bundle.js?5+2z7ZZmFuZK5IcimlZbxw==", true)</script>
+    
+
 
 <!-- Window Load -->
 <!-- add class for prettify -->
@@ -896,6 +930,10 @@ It will not impact the appearance and can give developers a lot of support :)
     });
 
     
+    
+        
+        
+        HanabiBrowser.start('pre code',true);
     
 </script>
 
@@ -929,7 +967,7 @@ It will not impact the appearance and can give developers a lot of support :)
     var copyrightNow = new Date().getFullYear();
     var textContent = document.querySelector('span[year]')
 
-    copyrightSince = 0000;
+    copyrightSince = 2017;
     if (copyrightSince === copyrightNow||copyrightSince === 0000) {
         textContent.textContent = copyrightNow
     } else {
